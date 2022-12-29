@@ -6,12 +6,12 @@
 #include <string>
 
 #if BLN_LOG_DBG
-    #define bln_log_dbg(args...) bln_log::println(args)
+    #define bln_log_dbg(args, ...) bln_log::println(args, ## __VA_ARGS__)
 #else
     #define bln_log_dbg(...) (void)0
 #endif
 
-#define bln_log_rel(args...) bln_log::println(args)
+#define bln_log_rel(args, ...) bln_log::println(args, ## __VA_ARGS__)
 
 namespace bln_log {
 
